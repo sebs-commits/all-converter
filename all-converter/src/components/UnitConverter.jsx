@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../styles/UnitConverter.css";
 const UnitConverter = () => {
   const [inputValue, setInputValue] = useState("1");
   const [fromUnit, setFromUnit] = useState("meters");
@@ -64,7 +64,7 @@ const UnitConverter = () => {
   }, [inputValue, fromUnit, toUnit]);
 
   return (
-    <div>
+    <div className="main-container">
       <h1>Unit Converter</h1>
       <div>
         <input
@@ -88,7 +88,9 @@ const UnitConverter = () => {
         </select>
       </div>
       <div>
-        Result: {result.toFixed(2)} {toUnit}
+        <h3>
+          Result: {result.toFixed(2)} {toUnit}
+        </h3>
       </div>
     </div>
   );
